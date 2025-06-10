@@ -1,11 +1,13 @@
 {
   "name": "prog-ii-i",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "lint:html": "htmlhint '/*.html'",
-    "lint:css": "stylelint '/*.css'",
-    "lint:js": "eslint '/*.js'",
+    "lint:html": "htmlhint '**/*.html'",
+    "lint:css": "stylelint 'public/**/*.css' && echo '✅ Lint de CSS exitoso, sin errores.'",
+    "lint:js": "eslint '**/*.js'",
+    "lint:all": "npm run lint:html && npm run lint:css && npm run lint:js",
     "audit": "npm audit --audit-level=moderate",
     "axe": "axe ./index.html",
     "lhci:collect": "lhci collect --url=http://localhost:8080",
@@ -14,7 +16,6 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
   "dependencies": {
     "body-parser": "^1.20.3",
     "cors": "^2.8.5",
@@ -34,6 +35,6 @@
     "htmlhint": "^1.5.1",
     "http-server": "^14.1.1",
     "stylelint": "^15.11.0",
-    "stylelint-config-standard": "^34.0.0"
-  }
+    "stylelint-config-standard": "^34.0.0"
+  }
 }

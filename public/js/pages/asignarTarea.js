@@ -1,10 +1,10 @@
 document.getElementById("tareaForm").addEventListener("submit",function(event){
-  event.preventDefault()
-  let titulo=document.getElementById("titulo").value
-  let descripcion=document.getElementById("descripcion").value
-  let fecha_inicio=document.getElementById("fecha_inicio").value
-  let fecha_final=document.getElementById("fecha_final").value
-  let group_id=sessionStorage.getItem('group_id')
+  event.preventDefault();
+  let titulo=document.getElementById("titulo").value;
+  let descripcion=document.getElementById("descripcion").value;
+  let fecha_inicio=document.getElementById("fecha_inicio").value;
+  let fecha_final=document.getElementById("fecha_final").value;
+  let group_id=sessionStorage.getItem('group_id');
   fetch("http://localhost:3000/asignarTarea",{
     method:"POST",
     headers:{"Content-Type":"application/json"},
@@ -19,11 +19,11 @@ document.getElementById("tareaForm").addEventListener("submit",function(event){
   .then(response=>response.json())
   .then(data=>{
     if(data.success){
-      alert("Tarea asignada correctamente.")
+      alert("Tarea asignada correctamente.");
     }else{
-      alert("Error al asignar la tarea.")
+      alert("Error al asignar la tarea.");
     }
-    window.history.back()
+    window.history.back();
   })
-  .catch(error=>alert("Error al asignar tarea:",error))
-})
+  .catch(error=>alert("Error al asignar tarea:",error));
+});
